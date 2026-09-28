@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+</head>
+<body>
+    <h1>Usuario {{ usuario.id }}</h1>
+    <p>Nombre Completo: {{ usuario.nombre }} {{ usuario.apellido }}</p>
+    <p>Email: {{ usuario.email }}</p>
+    <p>Fecha de Registro: {{ usuario.fecha_registro }}</p>
+    <p>Fecha de Actualización: {{ usuario.fecha_actualizacion }}</p>
+    <br>
+    <a href="/editar/{{ usuario.id }}">Editar mi usuario</a>
+    <a href="/eliminar/{{ usuario.id }}">Eliminar</a>
+</body>
+</html>

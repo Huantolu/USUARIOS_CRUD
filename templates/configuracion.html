@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+</head>
+<body>
+    <h1>Editar Usuario {{ usuario.id}}</h1>
+    <form action="/Editar/{{ usuario.id }}" method="POST">
+        <label for="nombre">Nombre:</label>
+        <br>
+        <input type="text" id="nombre" name="nombre" value="{{ usuario.nombre }}">
+        <br>
+        <label for="apellido">Apellido:</label>
+        <br>
+        <input type="text" id="apellido" name="apellido" value="{{ usuario.apellido }}">
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" value="{{ usuario.email }}">
+        <br>
+        <input type="submit" value="Guardar Cambios">
+    </form>
+</body>
+</html>
