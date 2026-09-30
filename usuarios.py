@@ -11,6 +11,18 @@ class Usuario:
         self.updated_at = data["updated_at"]
 
     @classmethod
-    def guardar(cls, data):
-        query = "INSERT INTO usuarios (nombre, apellido, email) VALUES (%(nombre)s, %(apellido)s, %(email)s);"
-        return connectToMySQL(DB_NAME).query_db(query, data)
+    def save(cls, datos):
+        #query  
+        query = "INSERT INTO usuarios (nombre, apellido, email, created_at, updated_at) VALUES %(nombre)s, %(apellido)s, %(email)s, NOW(), NOW()"
+        return connectToMySQL('usuarios_crud').query_db(query, datos)
+
+    @classmethod
+    def get_all(cls):
+        query = "SELECT * FROM usuarios;"
+        usuarios_en_bd = connectToMySQL('usuarios_crud').query_db(query)
+        usuarios = []
+        for usuarios in usuarios_en_bd:
+            
+
+
+    #CRUD - CREATE READ{get all & get one & get by name} UPDATE DELETE
